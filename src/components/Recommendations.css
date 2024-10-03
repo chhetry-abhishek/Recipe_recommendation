@@ -1,0 +1,19 @@
+.recommendations {
+    margin: 20px;
+  }
+  
+  .recommendation-item {
+    margin: 10px 0;
+  }
+  
+  .recommendation-link {
+    text-decoration: none;
+    color: #00B5E2; 
+    font-weight: bold;
+  }
+  
+  .recommendation-link:hover {
+    text-decoration: underline; 
+    color: #008CC4; 
+  }
+  

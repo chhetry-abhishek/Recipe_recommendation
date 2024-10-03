@@ -1,0 +1,38 @@
+/* src/pages/RecipeDetail.css */
+.recipe-detail {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .recipe-image {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  .recipe-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .recipe-table th,
+  .recipe-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .recipe-table th {
+    background-color: #1a8dcf;
+  }
+  
+  .recipe-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .recipe-table ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
