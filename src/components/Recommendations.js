@@ -16,7 +16,7 @@ const Recommendations = ({ recommendations = [] }) => {
             </li>
           ))
         ) : (
-          <p>No recipes found. Try searching with different ingredients.</p>
+          <p>Search your Desired Recipe with us.</p>
         )}
       </ol>
     </div>

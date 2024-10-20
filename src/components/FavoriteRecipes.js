@@ -47,7 +47,7 @@ const FavoriteRecipes = ({ favorites = [] }) => {
               </div>
             ))
           ) : (
-            <p>Search your Desired Recipe with us.</p>
+            <p>No favorite recipes found.</p>
           )}
         </div>
         <button className="carousel-button" onClick={scrollRight}>&gt;</button>
