@@ -3,34 +3,32 @@ import './FavoriteRecipes.css';
 
 const FavoriteRecipes = ({ favorites = [] }) => {
   const favoritesRef = useRef();
-  const totalCards = favorites.length; // Total number of favorite cards
+  const totalCards = favorites.length; 
 
   const scrollLeft = () => {
     if (favoritesRef.current) {
-      const scrollWidth = favoritesRef.current.scrollWidth; // Total scrollable width
-      const clientWidth = favoritesRef.current.clientWidth; // Visible width
-      const scrollLeft = favoritesRef.current.scrollLeft; // Current scroll position
+      const scrollWidth = favoritesRef.current.scrollWidth; 
+      const clientWidth = favoritesRef.current.clientWidth;
+      const scrollLeft = favoritesRef.current.scrollLeft; 
 
-      // If at the beginning, scroll to the end
       if (scrollLeft === 0) {
         favoritesRef.current.scrollTo({ left: scrollWidth - clientWidth, behavior: 'smooth' });
       } else {
-        favoritesRef.current.scrollBy({ left: -200, behavior: 'smooth' }); // Scroll left
+        favoritesRef.current.scrollBy({ left: -200, behavior: 'smooth' }); 
       }
     }
   };
 
   const scrollRight = () => {
     if (favoritesRef.current) {
-      const scrollWidth = favoritesRef.current.scrollWidth; // Total scrollable width
-      const clientWidth = favoritesRef.current.clientWidth; // Visible width
-      const scrollLeft = favoritesRef.current.scrollLeft; // Current scroll position
+      const scrollWidth = favoritesRef.current.scrollWidth;
+      const clientWidth = favoritesRef.current.clientWidth; 
+      const scrollLeft = favoritesRef.current.scrollLeft; 
 
-      // If at the end, scroll to the beginning
       if (scrollLeft + clientWidth >= scrollWidth) {
         favoritesRef.current.scrollTo({ left: 0, behavior: 'smooth' });
       } else {
-        favoritesRef.current.scrollBy({ left: 200, behavior: 'smooth' }); // Scroll right
+        favoritesRef.current.scrollBy({ left: 200, behavior: 'smooth' });
       }
     }
   };

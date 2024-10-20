@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Recommendations from '../components/Recommendations';
-import FavoriteRecipes from '../components/FavoriteRecipes'; // New Component
-import './Home.css'; // Ensure you import the CSS
+import FavoriteRecipes from '../components/FavoriteRecipes'; 
+import './Home.css'; 
 
 function Home() {
   const [ingredients, setIngredients] = useState(['']);
@@ -40,7 +40,7 @@ function Home() {
         `https://api.spoonacular.com/recipes/complexSearch?includeIngredients=${query}&number=5&apiKey=f17956d73ddc47ea8d47e000143ff4a2`
       );
       const data = await response.json();
-      setRecipes(data.results || []); // Handle empty results gracefully
+      setRecipes(data.results || []); 
     } catch (error) {
       console.error('Error fetching recipes:', error);
     }
@@ -48,7 +48,7 @@ function Home() {
     setLoading(false);
   };
 
-  // Fetch random popular recipes for "People's Favorites"
+ 
   useEffect(() => {
     const fetchPopularRecipes = async () => {
       try {
@@ -56,7 +56,7 @@ function Home() {
           `https://api.spoonacular.com/recipes/random?number=5&apiKey=f17956d73ddc47ea8d47e000143ff4a2`
         );
         const data = await response.json();
-        setFavorites(data.recipes || []); // Handle empty results gracefully
+        setFavorites(data.recipes || []);
       } catch (error) {
         console.error('Error fetching popular recipes:', error);
       }
@@ -82,7 +82,7 @@ function Home() {
               type="button"
               className="remove-ingredient-button"
               onClick={() => handleRemoveIngredient(index)}
-              disabled={ingredients.length === 1} // Disable if there's only one ingredient
+              disabled={ingredients.length === 1} 
             >
               Remove
             </button>
