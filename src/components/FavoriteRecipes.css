@@ -1,0 +1,75 @@
+/* FavoriteRecipes.css */
+.favorites-container {
+    display: flex;
+    flex-direction: column; /* Stack title and carousel controls vertically */
+    align-items: center; /* Center items */
+    padding: 20px; /* Add some padding around the container */
+    background-color: #f9f9f9; /* Light background for better contrast */
+    border-radius: 8px; /* Rounded corners for the container */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+.carousel-controls {
+    display: flex; /* Use flexbox for controls */
+    align-items: center; /* Align items vertically */
+    width: 100%; /* Full width */
+    position: relative; /* For absolute positioning of arrows */
+    justify-content: center; /* Center the buttons */
+}
+
+.favorite-recipes {
+    display: flex; /* Use flexbox for layout */
+    overflow-x: auto; /* Allow horizontal scrolling */
+    gap: 20px; /* Space between favorite cards */
+    padding: 10px 0; /* Padding for the section */
+    scroll-behavior: smooth; /* Smooth scrolling effect */
+    width: 100%; /* Ensure full width for scrolling */
+}
+
+.favorite-card {
+    background-color: white; /* Card background color */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Enhanced shadow for depth */
+    padding: 15px; /* Padding inside cards */
+    min-width: 200px; /* Minimum width for each card */
+    max-width: 30%; /* Allow cards to take up to 30% of the width for 3 cards */
+    flex: 0 0 auto; /* Prevent cards from shrinking */
+    text-align: center; /* Center the content */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transition effects */
+}
+
+.favorite-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Deeper shadow on hover */
+}
+
+.carousel-button {
+    background-color: #007bff; /* Button color */
+    color: white; /* Button text color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px; /* Padding for button */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 18px; /* Font size */
+    margin: 0 10px; /* Space around buttons */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+    z-index: 1; /* Ensure buttons are above other content */
+}
+
+.carousel-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+@media (max-width: 768px) {
+    .favorite-card {
+        min-width: 150px; /* Adjust minimum width for smaller screens */
+        max-width: 45%; /* Allow cards to take up to 45% on small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .favorite-card {
+        max-width: 90%; /* Allow cards to take up to 90% on very small screens */
+    }
+}

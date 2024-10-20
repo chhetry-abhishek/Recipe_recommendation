@@ -1,20 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Recommendations.css'; 
+import './Recommendations.css';
 
-const Recommendations = ({ recommendations }) => {
+const Recommendations = ({ recommendations = [] }) => {
   return (
     <div className="recommendations">
       <h2>Recommendations</h2>
-      <ul>
-        {recommendations.map((item) => (
-          <li key={item.id} className="recommendation-item">
-            <Link to={`/recipe/${item.id}`} className="recommendation-link">
-              {item.name} {}
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <ol>
+        {recommendations.length > 0 ? (
+          recommendations.map((item) => (
+            <li key={item.id} className="recommendation-item">
+              <Link to={`/recipe/${item.id}`} className="recommendation-link">
+                {item.title}
+              </Link>
+            </li>
+          ))
+        ) : (
+          <p>No recipes found. Try searching with different ingredients.</p>
+        )}
+      </ol>
     </div>
   );
 };
